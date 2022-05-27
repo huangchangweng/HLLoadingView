@@ -4,7 +4,7 @@
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ``` objc
-pod 'HLCategorys', '1.0.0'
+pod 'HLLoadingView', '1.0.0'
 ```
 
 基本使用方法:<p>
@@ -44,7 +44,7 @@ iOS 9.0 +, Xcode 7.0 +
 
 * 1.0.0 :
 
-  完成HLCategorys基础搭建
+  完成HLLoadingView基础搭建
 
 # License
-HLNetworkManager is available under the MIT license. See the LICENSE file for more info.
+HLLoadingView is available under the MIT license. See the LICENSE file for more info.
