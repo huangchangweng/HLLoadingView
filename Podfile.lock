@@ -1,0 +1,16 @@
+PODS:
+  - JHUD (0.3.0)
+
+DEPENDENCIES:
+  - JHUD
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - JHUD
+
+SPEC CHECKSUMS:
+  JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
+
+PODFILE CHECKSUM: 97c3ad34c16ecacbc290ee6d4ee3c6f13b5e8375
+
+COCOAPODS: 1.11.3
