@@ -1,7 +1,7 @@
 # HLLoadingView
 对JHUD封装，作为页面的遮罩层。
 
-##### 支持使用CocoaPods引入, Podfile文件中添加:
+##### 支持使用CocoaPods引入, Podfile文件中添加:`暂未支持`
 
 ``` objc
 pod 'HLLoadingView', '1.0.0'
