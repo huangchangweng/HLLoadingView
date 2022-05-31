@@ -34,13 +34,13 @@ isBangsScreen; \
     
     NSMutableArray *lodingImages = [NSMutableArray array];
     for (int index = 1; index<=3; index++) {
-        UIImage *lodingImage = [HLLoadingView hl_budleImageWithName:[NSString stringWithFormat:@"loading_%d.png",index]];
+        UIImage *lodingImage = [HLLoadingView budleImageWithName:[NSString stringWithFormat:@"loading_%d.png",index]];
         [lodingImages addObject:lodingImage];
     }
     
-    UIImage *failureImage = [HLLoadingView hl_budleImageWithName:@"no_notwork"];
-    UIImage *customErrorImage = [HLLoadingView hl_budleImageWithName:@"server_error"];
-    UIImage *backImage = [HLLoadingView hl_budleImageWithName:@"nav_back_black"];
+    UIImage *failureImage = [HLLoadingView budleImageWithName:@"no_notwork"];
+    UIImage *customErrorImage = [HLLoadingView budleImageWithName:@"server_error"];
+    UIImage *backImage = [HLLoadingView budleImageWithName:@"nav_back_black"];
     
     return [self initWithFrame:frame
                   lodingImages:lodingImages
@@ -79,17 +79,17 @@ isBangsScreen; \
 
 #pragma mark - Private Method
 
-+ (UIImage *)hl_budleImageWithName:(NSString *)iamgeName
++ (UIImage *)budleImageWithName:(NSString *)imageName
 {
-    /// 静态库 url 的获取
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"HLLoadingView" withExtension:@"bundle"];
+    NSString *bundleName = @"HLLoadingView";
+    // 静态库 url 的获取
+    NSURL *url = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
     if (!url) {
-        /// 动态库 url 的获取
-        url = [[NSBundle bundleForClass:[self class]] URLForResource:@"HLLoadingView" withExtension:@"bundle"];
+        // 动态库 url 的获取
+        url = [[NSBundle bundleForClass:[self class]] URLForResource:bundleName withExtension:@"bundle"];
     }
     NSBundle *bundle = [NSBundle bundleWithURL:url];
-    
-    UIImage *image = [UIImage imageNamed:iamgeName inBundle:bundle compatibleWithTraitCollection:nil];
+    UIImage *image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
     return image;
 }
 
