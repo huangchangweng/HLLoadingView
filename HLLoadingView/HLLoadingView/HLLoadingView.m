@@ -21,11 +21,6 @@ isBangsScreen; \
 
 @interface HLLoadingView()
 @property (nonatomic, strong) UIButton *backButton;
-
-@property (nonatomic, strong) NSArray<UIImage *> *lodingImages;
-@property (nonatomic, strong) UIImage *failureImage;
-@property (nonatomic, strong) UIImage *customErrorImage;
-@property (nonatomic, strong) UIImage *backImage;
 @end
 
 @implementation HLLoadingView
@@ -97,7 +92,7 @@ isBangsScreen; \
 
 - (void)showLoadingAtView:(UIView *)view
 {
-    self.indicatorViewSize = CGSizeMake(50, 10);
+    self.indicatorViewSize = self.lodingImages.firstObject.size;
     self.customAnimationImages = self.lodingImages;
     self.messageLabel.text = nil;
     [self showAtView:view hudType:JHUDLoadingTypeCustomAnimations];
@@ -105,7 +100,7 @@ isBangsScreen; \
 
 - (void)showFailureAtView:(UIView *)view
 {
-    self.indicatorViewSize = CGSizeMake(280, 140);
+    self.indicatorViewSize = self.failureImage.size;
     self.messageLabel.text = @"网络好像有点问题哟!";
     self.customImage = self.failureImage;
 
@@ -119,7 +114,7 @@ isBangsScreen; \
     if (!image) {
         image = self.customErrorImage;
     }
-    self.indicatorViewSize = CGSizeMake(280, 140);
+    self.indicatorViewSize = image.size;
     self.messageLabel.text = message;
     [self.refreshButton setTitle:@"重试" forState:UIControlStateNormal];
     self.customImage = image;

@@ -9,6 +9,19 @@
 
 @interface HLLoadingView : JHUD
 
+@property (nonatomic, strong) NSArray<UIImage *> *lodingImages;
+@property (nonatomic, strong) UIImage *failureImage;
+@property (nonatomic, strong) UIImage *customErrorImage;
+@property (nonatomic, strong) UIImage *backImage;
+
+/**
+ *  可选初始化方法
+ *  @param frame 位置大小
+ *  @param lodingImages 加载中图片数组
+ *  @param failureImage 失败图片
+ *  @param customErrorImage 自定义错误图片（这里传了，在showErrorAtView:image:message:就可不传了）
+ *  @param backImage 返回按钮图片
+ */
 - (instancetype)initWithFrame:(CGRect)frame
                  lodingImages:(NSArray<UIImage *> *)lodingImages
                  failureImage:(UIImage *)failureImage
