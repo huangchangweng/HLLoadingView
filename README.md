@@ -35,12 +35,17 @@ pod 'HLLoadingView', '1.0.1'
     self.loadingView.frame = self.view.bounds;
 }
 ```
+如果想全局替换HLLoadingView的图片资源，可以在工程中新建一个名字为`HLLoadingView.bundle`的bundle，参照pod中`HLLoadingView.bundle`为图片资源命名。HLLoadingView会优先加载当前工程中的图片资源。
 
 # Requirements
 
 iOS 9.0 +, Xcode 7.0 +
 
 # Version
+    
+* 1.0.2 :
+
+  修改封装逻辑
     
 * 1.0.1 :
 
