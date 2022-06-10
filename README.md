@@ -6,6 +6,8 @@
 ``` objc
 pod 'HLLoadingView', '1.0.1'
 ```
+# Demonstration
+![image](https://github.com/huangchangweng/HLLoadingView/blob/main/QQ20220610-113300.gif)
 
 基本使用方法:<p>
 
