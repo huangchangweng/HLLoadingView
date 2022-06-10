@@ -41,6 +41,10 @@ pod 'HLLoadingView', '1.0.1'
 
 iOS 9.0 +, Xcode 7.0 +
 
+# Dependency
+    
+- "JHUD", "0.3.0"
+
 # Version
     
 * 1.0.2 :
