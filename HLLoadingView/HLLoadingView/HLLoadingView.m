@@ -51,25 +51,43 @@ isBangsScreen; \
                     backImage:(UIImage *)backImage;
 {
     if (self = [super initWithFrame:frame]) {
-        self.lodingImages = lodingImages;
-        self.failureImage = failureImage;
-        self.customErrorImage = customErrorImage;
-        self.backImage = backImage;
+        // image
+        _lodingImages = lodingImages;
+        _failureImage = failureImage;
+        _customErrorImage = customErrorImage;
+        _backImage = backImage;
+        // other
+        UIColor *defaultColor = HLUIColorFromHEX(0x4181FE);
+        _refreshButtonTitle = @"重试";
+        _refreshButtonTitleColor = defaultColor;
+        _refreshButtonTitleFont = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+        _refreshButtonBorderColor = defaultColor;
+        _refreshButtonBorderWidth = 0.5f;
+        _refreshButtonCornerRadius = 17.5f;
+        _messageLabelColor = [UIColor lightGrayColor];
+        _messageLabelFont = [UIFont systemFontOfSize:16];
         
         self.backgroundColor = [UIColor whiteColor];
-        self.messageLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:14.f];
-        // refreshButton
-        UIColor *bColor = HLUIColorFromHEX(0x4181FE);
-        self.refreshButton.layer.borderColor = bColor.CGColor;
-        self.refreshButton.layer.cornerRadius = 17.5f;
-        self.refreshButton.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
-        [self.refreshButton setTitle:@"重试" forState:UIControlStateNormal];
-        [self.refreshButton setTitleColor:bColor forState:UIControlStateNormal];
         // backButton
-        [self.backButton setImage:backImage forState:UIControlStateNormal];
+        [self.backButton setImage:_backImage forState:UIControlStateNormal];
         [self addSubview:self.backButton];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    // messageLabel
+    self.messageLabel.textColor = _messageLabelColor;
+    self.messageLabel.font = _messageLabelFont;
+    // refreshButton
+    self.refreshButton.layer.borderColor = _refreshButtonBorderColor.CGColor;
+    self.refreshButton.layer.borderWidth = _refreshButtonBorderWidth;
+    self.refreshButton.layer.cornerRadius = _refreshButtonCornerRadius;
+    self.refreshButton.titleLabel.font = _refreshButtonTitleFont;
+    [self.refreshButton setTitle:_refreshButtonTitle forState:UIControlStateNormal];
+    [self.refreshButton setTitleColor:_refreshButtonTitleColor forState:UIControlStateNormal];
 }
 
 #pragma mark - Private Method

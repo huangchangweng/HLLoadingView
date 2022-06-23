@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HLLoadingView.h"
 
 @interface AppDelegate ()
 
@@ -15,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 全局设置HLLoadingView样式
+//    [HLLoadingView appearance].failureImage = [UIImage imageNamed:@"no_notwork"];
+    
     return YES;
 }
 

@@ -9,10 +9,28 @@
 
 @interface HLLoadingView : JHUD
 
-@property (nonatomic, strong) NSArray<UIImage *> *lodingImages;
-@property (nonatomic, strong) UIImage *failureImage;
-@property (nonatomic, strong) UIImage *customErrorImage;
-@property (nonatomic, strong) UIImage *backImage;
+@property (nonatomic, strong) NSArray<UIImage *> *lodingImages UI_APPEARANCE_SELECTOR;  ///< 加载中图片
+@property (nonatomic, strong) UIImage *failureImage UI_APPEARANCE_SELECTOR;             ///< 网络问题图片
+@property (nonatomic, strong) UIImage *customErrorImage UI_APPEARANCE_SELECTOR;         ///< 自定义图片
+@property (nonatomic, strong) UIImage *backImage UI_APPEARANCE_SELECTOR;                ///< 左上角返回按钮图片
+
+/// 刷新按钮标题，默认“重试”
+@property (nonatomic, copy) NSString *refreshButtonTitle UI_APPEARANCE_SELECTOR;
+/// 刷新按钮标题颜色，默认0x4181FE
+@property (nonatomic, strong) UIColor *refreshButtonTitleColor UI_APPEARANCE_SELECTOR;
+/// 刷新按钮标题字体大小，[UIFont systemFontOfSize:14 weight:UIFontWeightMedium]
+@property (nonatomic, strong) UIFont *refreshButtonTitleFont UI_APPEARANCE_SELECTOR;
+/// 刷新按钮边框颜色，默认0x4181FE
+@property (nonatomic, strong) UIColor *refreshButtonBorderColor UI_APPEARANCE_SELECTOR;
+/// 刷新按钮边框宽度，默认0.5f
+@property (nonatomic, assign) CGFloat refreshButtonBorderWidth UI_APPEARANCE_SELECTOR;
+/// 刷新按钮圆角大小，默认17.5f
+@property (nonatomic, assign) CGFloat refreshButtonCornerRadius UI_APPEARANCE_SELECTOR;
+/// 中间消息标签颜色，默认[UIColor lightGrayColor]
+@property (nonatomic, strong) UIColor *messageLabelColor UI_APPEARANCE_SELECTOR;
+/// 中间消息标签字体大小，默认[UIFont systemFontOfSize:16]
+@property (nonatomic, strong) UIFont *messageLabelFont UI_APPEARANCE_SELECTOR;
+
 
 /**
  *  可选初始化方法

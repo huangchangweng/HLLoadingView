@@ -4,7 +4,7 @@
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ``` objc
-pod 'HLLoadingView', '1.0.1'
+pod 'HLLoadingView', '1.0.3'
 ```
 # Demonstration
 ![image](https://github.com/huangchangweng/HLLoadingView/blob/main/QQ20220610-113300.gif)
@@ -39,24 +39,40 @@ pod 'HLLoadingView', '1.0.1'
 ```
 如果想全局替换HLLoadingView的图片资源，可以在工程中新建一个名字为`HLLoadingView.bundle`的bundle，参照pod中`HLLoadingView.bundle`为图片资源命名。HLLoadingView会优先加载当前工程中的图片资源。
 
+# GlobalSetting
+
+如果您项目中多个地方使用到该组件，您可以全局设置样式，例在`AppDelegate`添加
+
+``` objc
+[HLLoadingView appearance].failureImage = [UIImage imageNamed:@"no_notwork"];
+```
+
+> 注意：`代码` > `appearance` > `interface builder`，所以appearance设置的会覆盖在xib或storyboard中设置的属性，当然`代码`会覆盖`appearance`设置
+
 # Requirements
 
 iOS 9.0 +, Xcode 7.0 +
 
 # Dependency
-    
+
 - "JHUD", "0.3.0"
 
 # Version
-    
+
+* 1.0.3 :
+
+  添加更多自定义属性
+  
+  添加全局设置功能
+  
 * 1.0.2 :
 
   修改封装逻辑
-    
+  
 * 1.0.1 :
 
   修改图片资源加载问题
-    
+  
 * 1.0.0 :
 
   完成HLLoadingView基础搭建

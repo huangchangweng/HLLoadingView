@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "HLLoadingView"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "对JHUD封装"
 
   # 描述
